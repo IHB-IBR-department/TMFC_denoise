@@ -4,7 +4,9 @@ Select Structural Images
 ========================
 
 If the user chooses to calculate tissue-based regressors and/or DVARS, the ``TMFC_denoise`` GUI 
-prompts them to select unprocessed T1-weighted structural images (in native space). 
+prompts them to select T1-weighted structural images in native space.
+
+If existing SPM segmentation outputs are found in the structural-image folder, including GM, WM, and CSF tissue-probability maps and the deformation field, ``TMFC_denoise`` reuses them for mask generation instead of repeating segmentation. 
 
 .. figure:: _static/select_anat.svg
    :align: center
@@ -12,8 +14,7 @@ prompts them to select unprocessed T1-weighted structural images (in native spac
 
    Select structural images GUI.
 
-First, select the parent folder that contains the subject folders with ``ANAT`` subfolders for 
-unprocessed T1-weighted structural images (if necessary). 
+First, select the parent folder that contains the subject folders with ``ANAT`` subfolders for T1-weighted structural images in native space (if necessary). 
 By default, the parent folders for first-level GLMs 
 and ``ANAT`` subfolders are assumed to be the same (in BIDS they differ). 
 
@@ -30,7 +31,7 @@ To open *Select structural images* GUI independently of the main ``TMFC_denoise`
 
 *Output:*
 
-- ``anat_paths`` — Full paths to unprocessed (native-space) T1-weighted structural images (cell array)  
+- ``anat_paths`` — Full paths to native-space T1-weighted structural images (cell array)  
 
 ---------------------------------------------------------------------------
 

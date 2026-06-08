@@ -140,6 +140,9 @@ options.CSFmask.erode = 2;
 %  options.GMmask.dilate, options.WMmask.erode, options.CSFmask.erode] = tmfc_masks_GUI();
 
 % Create masks:
+% TMFC_denoise automatically reuses existing SPM segmentation files
+% and previously created masks when available.
+masks = [];
 if sum(options.aCompCor)~=0 || ~strcmpi(options.WM_CSF,'none') || ~strcmpi(options.GSR,'none')  || options.DVARS == 1
     masks = tmfc_create_masks(SPM_paths,anat_paths,func_paths,options);
 end

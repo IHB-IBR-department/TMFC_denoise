@@ -5,10 +5,10 @@ root_dir = os.path.abspath("../..")
 sys.path.insert(0, root_dir)
 
 project = "TMFC_denoise"
-copyright = "2025, Ruslan Masharipov"
+copyright = "2026, Ruslan Masharipov"
 author = "Ruslan Masharipov"
 
-release = "v1.4.4"
+release = "v1.5.0"
 
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 root_doc = "index"

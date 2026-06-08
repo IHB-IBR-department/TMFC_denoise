@@ -77,3 +77,14 @@ TMFC_denoise can be run via GUI or the command line. To run TMFC_denoise via the
      may be disrupted by noise (high variance). In the first pass, SPM 
      estimates the noise variances; in the second pass, each image
      is reweighted by the inverse of its variance.
+
+- (11) Creates quality control (QC) plots, including subject-level FD-DVARS plots,
+     group-level FD-DVARS summaries, motion summaries, and task-correlation summaries.
+
+- (12) Creates TMFC_denoise reports containing denoising parameters,
+     mask-generation settings, motion statistics, task-motion correlations,
+     FD-DVARS metrics, and nuisance-regressor summaries. Reports can be used
+     to facilitate reporting of denoising procedures in scientific manuscripts.
+
+**Note**: 
+**Beta scrubbing** for beta-series correlation (BSC) analyses is available through the TMFC toolbox. During beta-series estimation, trials associated with excessive head motion can be excluded using a user-defined FD threshold.

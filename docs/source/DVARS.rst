@@ -13,7 +13,7 @@ The outputs are saved in ``TMFC_denoise/[WM*e*]_[CSF*e*]_[GM*d*]`` subfolders:
 
 ----
 
-The GUI window for DVARS time-series inspection is opened with ``tmfc_plot_DVARS``. It is called automatically by the main function ``TMFC_denoise``.
+The GUI window for DVARS time-series inspection, report generation, and QC plot visualization is opened with ``tmfc_plot_DVARS``. It is called automatically by the main function ``TMFC_denoise``.
 
 .. figure:: _static/DVARS_plot.svg
    :align: center
@@ -62,7 +62,7 @@ Pressing the :menuselection:`Save` button stores individual subject FD and DVARS
    * - postDVARS (struct)
      - DVARS data for each subject (after denoising).
 
-       - **Sess:** Incluse DVARS time series, FD-DVARS and task-DVARS correlations for each session. 
+       - **Sess:** Includes DVARS time series, FD-DVARS and task-DVARS correlations for each session. 
        - **Mean_FD_DVARS_corr:** Mean FD-DVARS correlation across sessions. 
        - **Max_FD_DVARS_corr:** Maximum FD-DVARS correlation across sessions. 
        - **taskDVARS_corr_mean:** Mean task-DVARS correlation across sessions. 
@@ -72,7 +72,7 @@ Pressing the :menuselection:`Save` button stores individual subject FD and DVARS
    * - preDVARS (struct)
      - DVARS data for each subject (before denoising).
 
-       - **Sess:** Incluse DVARS time series, FD-DVARS and task-DVARS correlations for each session. 
+       - **Sess:** Includes DVARS time series, FD-DVARS and task-DVARS correlations for each session. 
        - **Mean_FD_DVARS_corr:** Mean FD-DVARS correlation across sessions. 
        - **Max_FD_DVARS_corr:** Maximum FD-DVARS correlation across sessions.
        - **taskDVARS_corr_mean:** Mean task-DVARS correlation across sessions. 
@@ -81,6 +81,10 @@ Pressing the :menuselection:`Save` button stores individual subject FD and DVARS
 
 These values can be reported to demonstrate the effectiveness of noise regression. 
 If denoising is successful, spikes in the DVARS time series at high-motion time points should be reduced, and the FD-DVARS correlation should approach zero.
+
+Pressing the :menuselection:`Report` button opens a text report that summarizes the selected denoising strategy, mask parameters, motion statistics, FD-DVARS correlations, task-FD and task-DVARS correlations, and the number of nuisance regressors. The report can be copied from the GUI or saved as a *.txt file.
+
+Pressing the :menuselection:`QC` plots button opens additional QC figures, including subject-level FD-DVARS plots, group-level FD-DVARS summaries, motion summaries, and task-correlation summaries. These figures can be saved manually from the MATLAB figure window.
 
 
 

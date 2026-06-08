@@ -18,14 +18,14 @@ and estimates updated GLMs using weighted least-squares (WLS) or robust WLS (rWL
 Inputs
 ------
 
-Inputs include unprocessed structural and preprocessed functional images, 
+Inputs include structural images in native space and preprocessed functional images, 
 together with first-level GLMs specified in SPM. 
 
 Users specify paths to first-level GLMs (``SPM.mat`` files), select denoising options, 
 and set masking parameters. First-level GLMs must be **specified and estimated** in SPM12 or SPM25 and 
 **must include six head motion regressors**. 
 
-Unprocessed structural and preprocessed functional images can be automatically identified through the GUI. 
+Structural images in native space and preprocessed functional images can be automatically identified through the GUI. 
 Functional images may be preprocessed using an SPM-based pipeline 
 (e.g., see the ``preproc_fmri.m`` function in ``/spm/batches/``; Penny et al., 2011) 
 or with alternative pipelines such as fMRIPrep (Esteban et al., 2019). 
@@ -35,12 +35,12 @@ Denoising Options
 -----------------
 
 1) Head motion expansions
-2) Framewise displacement (FD)
+2) Framewise displacement (FD) and task-FD correlations
 3) Spike regressors
 4) aCompCor regressors 
 5) WM/CSF regressors
 6) Global signal regressors (GSR)
-7) DVARS (Derivative of root mean square VARiance over voxelS) and FD-DVARS correlations
+7) DVARS (Derivative of root mean square VARiance over voxelS), FD-DVARS correlations, and task-DVARS correlations
 8) Robust weighted least squares (rWLS)
 
 Outputs
@@ -49,6 +49,7 @@ Outputs
 All outputs, including noise regressors, updated GLMs, and QC measures, 
 are saved in a ``TMFC_denoise`` subfolder within each subject’s first-level GLM directory. 
 Group-level QC measures can be saved as a single ``.mat`` file in a user-specified directory.
+The report can also be saved as a .txt file and used to facilitate reporting of denoising procedures.
 
 How to Use Updated GLMs
 -----------------------
@@ -59,7 +60,7 @@ How to Use Updated GLMs
 
 - **Background functional connectivity (BGFC)**
 - **Least-squares-separate (LSS) GLMs**
-- **Beta-series correlation (BSC-LSS)**
+- **Beta-series correlation (BSC-LSS)** and **beta scrubbing**
 - **gPPI with deconvolution**
 
 3. The **TMFC toolbox** can also generate denoised **volume of interest (VOI)** files 

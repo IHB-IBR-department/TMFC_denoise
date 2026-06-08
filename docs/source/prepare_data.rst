@@ -9,9 +9,9 @@ Original GLMs
 The original model must be **estimated** (not only **specified**) in SPM12 or SPM25. 
 
 **Note:** Original models must include **six head motion regressors**, 
-and the specified functinal images must be **realigned** and **normalized** (smoothing is optional).
+and the specified functional images must be **realigned** and **normalized** (smoothing is optional).
 
-If you estimated first-level GLMs and later moved the GLM or functinal-image folders to another location, 
+If you estimated first-level GLMs and later moved the GLM or functional-image folders to another location, 
 you need to update the paths specified in the ``SPM.mat`` files (``SPM.xY.VY`` and ``SPM.swd`` fields).
 
 To change paths in ``SPM.mat`` files using the GUI, enter the following command in the MATLAB window::
@@ -38,11 +38,15 @@ Structural Images
 -----------------
 
 To calculate tissue-based regressors and/or DVARS, you need to create tissue-specific binary masks.
-These masks are generated from unprocessed T1-weighted structural images. Structural images must be in **native space**, 
+These masks are generated from T1-weighted structural images. Structural images must be in **native space**, 
 since binary masks are created in native space and later normalized to MNI space. 
 
-Structural images can be coregistered with functional images (optional).  
-This is not necessary because TMFC_denoise automatically coregisters the skull-stripped structural image and binary masks to the functional images.
+TMFC_denoise first searches for existing SPM segmentation outputs in the structural-image folder. 
+If GM, WM, CSF tissue-probability maps and the deformation field are found, they are reused for mask generation. Otherwise, segmentation is performed automatically.
+
+Structural images can be coregistered with functional images, but this is not required. 
+Final masks are normalized to MNI space using the deformation field estimated during segmentation and then resliced to match the voxel grid of the first functional image. 
+No additional coregistration transform is estimated at this stage.
 
 Structural images may be in ``*.img``/``*.hdr``, ``*.nii``, or ``*.nii.gz`` format. 
 
