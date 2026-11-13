@@ -8,7 +8,7 @@ project = "TMFC_denoise"
 copyright = "2026, Ruslan Masharipov"
 author = "Ruslan Masharipov"
 
-release = "v1.5.0"
+release = "v1.5.1"
 
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 root_doc = "index"

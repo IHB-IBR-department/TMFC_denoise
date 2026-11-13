@@ -12,6 +12,11 @@ For detailed documentation, please see: https://tmfc-denoise.readthedocs.io
 
 For examples of how to use TMFC_denoise via the command line, please see the [examples folder](examples).
 
+## Citation 
+If you use **TMFC_denoise** in your research, please cite the following paper:
+
+Masharipov, R., Ireddy, A., Didur, M., Cherednichenko, D., & Kireev, M. (2026). Denoising for task-modulated functional connectivity: Current practices, empirical benchmarking, and an SPM toolbox. Network Neuroscience, 1–35. https://doi.org/10.1162/netn.a.605
+
 ## Installation
 TMFC_denoise is available as a separate toolbox and as part of the **TMFC toolbox** (https://github.com/IHB-IBR-department/TMFC_toolbox).
 
@@ -22,6 +27,21 @@ TMFC_denoise is available as a separate toolbox and as part of the **TMFC toolbo
    Enter **TMFC** in the command window to open the TMFC toolbox GUI, then press **Tools --> Denoise** button.
 
 TMFC_denoise can be run via GUI or the command line. To run TMFC_denoise via the command line, see [*TMFC_denoise.m*](TMFC_denoise.m) function.
+
+
+## Important: Input GLM Requirements
+
+**Before running TMFC_denoise**, make sure that:
+
+1. Your first-level GLMs have been **specified and estimated in SPM12/SPM25**.
+2. Each GLM includes the **six head motion (realignment) parameters** as nuisance regressors for every session.
+
+In SPM, these parameters are typically added during first-level model specification via **Multiple regressors**, using the corresponding `rp_*.txt` files.
+
+**Important:** Simply having `rp_*.txt` files in your dataset is not sufficient. The six motion regressors must be included in the original `SPM.mat` model (`SPM.Sess.C`). Equivalent motion-parameter files can also be used.
+
+For details, see the [documentation](https://tmfc-denoise.readthedocs.io).
+
 
 ## Options
 

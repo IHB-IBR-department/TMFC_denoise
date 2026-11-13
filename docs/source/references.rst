@@ -2,8 +2,7 @@ References
 ==========
 
 Please cite **TMFC_denoise** as:
- - Ruslan Masharipov. (2025). TMFC denoise (v1.5.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.17176264
- - <Toolbox paper in review...>
+ - Masharipov, R., Ireddy, A., Didur, M., Cherednichenko, D., & Kireev, M. (2026). Denoising for task-modulated functional connectivity: Current practices, empirical benchmarking, and an SPM toolbox. Network Neuroscience, 1–35. https://doi.org/10.1162/netn.a.605
 
 If you use the **TMFC toolbox**, please cite:
  - Masharipov, R., Knyazeva, I., Korotkov, A., Cherednichenko, D., & Kireev, M. (2024). Comparison of whole-brain task-modulated functional connectivity methods for fMRI task connectomics. Communications Biology, 7(1). https://doi.org/10.1038/s42003-024-07088-3

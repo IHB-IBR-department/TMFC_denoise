@@ -12,7 +12,7 @@ function FDthr = tmfc_plot_FD(FD,options,SPM_paths,subject_paths,anat_paths,func
 % Allows saving group FD statistics and TMFC denoise settings.
 %
 % =========================================================================
-% Copyright (C) 2025 Ruslan Masharipov
+% Copyright (C) 2026 Ruslan Masharipov
 % License: GPL-3.0-or-later
 % Contact: masharipov@ihb.spb.ru
 
@@ -118,8 +118,8 @@ function plot_data(FD_threshold,iSub)
     FD_ts = []; sess_sum = 0; sess = 0;
     for jSess = 1:length(FD(iSub).Sess)
         FD_ts = [FD_ts; FD(iSub).Sess(jSess).FD_ts];
-        sess_sum = sess_sum + length(FD(iSub).Sess(jSess).FD_ts) + 1;
-        sess = [sess; sess_sum];
+        sess_sum = sess_sum + length(FD(iSub).Sess(jSess).FD_ts);
+        sess = [sess; sess_sum + 1];
     end
 
     % Plot FD time-series

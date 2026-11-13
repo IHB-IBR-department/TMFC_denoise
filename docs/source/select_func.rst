@@ -27,6 +27,7 @@ Second, select the ``FUNC`` subfolder for the first subject.
 This subfolder may include multiple session-specific subfolders (e.g., sess-01, sess-02). 
 Third, apply a text filter (e.g., *war*.nii) to match all unsmoothed images. 
 Images can be either ``*.img``/``*.hdr`` (3D) or ``*.nii`` (3D/4D). The ``*.nii.gz`` format is not supported.
+Compressed functional NIfTI files (``*.nii.gz``) must be decompressed to ``*.nii`` before selection.
 
 **NOTE:** You can also try applying the text filter without changing folders.
 
@@ -91,7 +92,7 @@ Example 2 — BIDS-like Folder Structure
 --------------------------------------
 
 1. Select the parent folder that contains all subject folders with ``FUNC`` subfolders (if necessary).  
-2. Apply text filter (e.g., ``*war*.nii``, ``*wr*.nii``, or ``*preproc*.nii.gz``) to match all fMRI images.
+2. Apply a text filter (e.g., ``*war*.nii``, ``*wr*.nii``, or ``*preproc*.nii``) to match the unsmoothed functional images.
 
 Here, the default parent folder ``project/derivatives/firstlevel-spm`` (with ``STAT`` subfolders) 
 needs to be changed to ``project/derivatives/fmriprep`` — the parent folder with ``FUNC`` subfolders.
@@ -130,7 +131,7 @@ Example 3 — Other (Non-BIDS) Folder Structure
 ---------------------------------------------
 
 1. Select the parent folder that contains all subject folders with ``FUNC`` subfolders (if necessary).  
-2. Select the ``FUNC`` subfolder for the first subject and apply text filter (e.g., ``*war*.nii``, ``*wr*.nii``, or ``*preproc*.nii.gz``) to match all fMRI images.
+2. Select the ``FUNC`` subfolder for the first subject and apply a text filter (e.g., ``*war*.nii``, ``*wr*.nii``, or ``*preproc*.nii``) to match the unsmoothed functional images.
 
 Here, the default parent folder ``project/firstlevel-spm`` (with ``STAT`` subfolders) 
 needs to be changed to ``project/nifti`` — the parent folder with ``FUNC`` subfolders.

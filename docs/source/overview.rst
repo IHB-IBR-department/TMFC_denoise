@@ -15,6 +15,27 @@ and estimates updated GLMs using weighted least-squares (WLS) or robust WLS (rWL
 
    TMFC_denoise overview.
 
+Saving and Loading Analysis Setups
+----------------------------------
+
+When ``TMFC_denoise`` is launched without input arguments, the startup dialog offers two options: **New analysis** and **Load saved analysis**.
+
+**New analysis**
+
+The user first selects a folder for automatic setup saves, then proceeds with selecting subjects, SPM.mat files, and denoising options. A new timestamped ``TMFC_denoise_autosave_*.mat`` file is created for each run and automatically updated after key setup steps. These autosaves allow users to restore their analysis configuration if the setup process is interrupted.
+
+**Load saved analysis**
+
+The user selects a previously saved setup file (either an autosave or a manually saved project). The toolbox restores the selected files and denoising settings, allowing the user to modify the analysis without selecting all input files again. Structural and functional image paths are reused if they remain valid. New autosaves are created in the same folder as the loaded setup, without overwriting the original file.
+
+**Manual saving**
+
+After the analysis is completed, the user can save the setup under a custom filename and in any folder. If manual saving is skipped, the automatic setup file remains available.
+
+.. note::
+
+   Setup files contain file paths and analysis parameters, not neuroimaging data or analysis results. The referenced input files must remain accessible. This workflow applies only to GUI launches without input arguments; command-line usage remains unchanged.
+
 Inputs
 ------
 

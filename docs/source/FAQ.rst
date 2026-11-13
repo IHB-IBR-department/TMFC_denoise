@@ -30,9 +30,9 @@ No. TMFC_denoise can also be used for task-activation analyses or other purposes
 
 ---
 
-**Q5. How can I resume a partially finished run?**  
-TMFC_denoise saves intermediate outputs (e.g., masks, FD, aCompCor) in subject subfolders.  
-If processing was interrupted, simply re-run the same command — previously completed subjects will be skipped automatically.
+**Q5. How can I resume a partially finished run?**
+When using the GUI, ``TMFC_denoise`` automatically saves the analysis setup after key configuration steps. To restore it, select **Load saved analysis** at startup and open the corresponding autosave file. Previously selected files and settings will be restored, allowing you to continue configuring the analysis.
+Previously generated intermediate outputs, such as segmentation files, masks, and noise regressors, can also be reused to avoid unnecessary recomputation.
 
 ---
 
